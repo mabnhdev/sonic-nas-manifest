@@ -1,10 +1,10 @@
-# Python   block   to   create   a route
+# Python code block to create a route
 
 import   cps_utils
 import   socket
 import   netaddr   as net
 
-# Populate   the   attributes
+# Populate the attributes
 version   =  'ipv4'
 route_ip   =  '70.5.5.0'
 obj   =  cps_utils.CPSObject('base-route/obj/entry')
@@ -29,7 +29,9 @@ print   obj.get()
 cps_update   =  ('create',   obj.get())
 transaction   =  cps_utils.CPSTransaction([cps_update])
 
-# Commit and verify result
+# Commit the transaction
 ret   =  transaction.commit()
+
+# Check for failure
 if not   ret:
     raise   RuntimeError   ("Error   creating   Route")
