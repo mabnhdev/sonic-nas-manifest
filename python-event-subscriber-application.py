@@ -1,4 +1,11 @@
 # Python block code for event subscriber application
 
 import cps
-import  
+import cps_utils
+
+handle = cps.event_connect()
+
+while True:   
+  ev = cps.event_wait(handle)
+
+  if ev[‘key’] == ...:       ...      elif ev['key'] == ...:       ...
