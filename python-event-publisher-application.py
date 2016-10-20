@@ -1,3 +1,5 @@
+# Python code block for event publisher application
+
 import   cps
 import   cps_utils
 
