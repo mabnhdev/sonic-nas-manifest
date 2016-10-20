@@ -10,30 +10,28 @@
 
 bool   cps_flush_mac(){
 
-  // Create   and initialize   the   transaction   object
+  // Create and initialize the transaction object
   cps_api_transaction_params_t   tran;
   if (cps_api_transaction_init(&tran)   !=   cps_api_ret_code_OK   ){
     return   false;
   }
 
-  // Create   and initialize   the   key
+  // Create and initialize the key
   cps_api_key_t   key;
   cps_api_key_from_attr_with_qual(&key,   BASE_MAC_FLUSH_OBJ,   cps_api_qualifier_TARGET);
 
-
-  // Create   the   object
+  // Create the object
   cps_api_object_t   obj   =  cps_api_object_create(); 
-
 
   if(obj   ==   NULL ){
     cps_api_transaction_close(&tran);
     return   false;
   }
 
-  // Set   the   key for   the   obejct
+  // Set the key for the object
   cps_api_object_set_key(obj,&key);
 
-  // Add   attributes   to   Flush   MAC   entries
+  // Add attributes to flush MAC entries
   cps_api_attr_id_t   ids[3]   =  {BASE_MAC_FLUSH_INPUT_FILTER,0,   BASE_MAC_FLUSH_INPUT_FILTER_VLAN   };
   const   int   ids_len   =  sizeof(ids)/sizeof(ids[0]);
 
@@ -55,20 +53,19 @@ bool   cps_flush_mac(){
   }
 
 
-  // Add   the   object   along   with   the   operation   to   transaction
+  // Add the object along with the operation to transaction
   if(cps_api_action(&tran,obj)   !=   cps_api_ret_code_OK   ){
     cps_api_object_delete(obj);
     return   false;
   }
 
-
-  // Commit   the   transaction
+  // Commit the transaction
   if(cps_api_commit(&tran)   !=   cps_api_ret_code_OK   ) {
     cps_api_transaction_close(&tran);
     return   false;
   }
 
-  // Cleanup   the   Transaction
+  // Cleanup the transaction
   cps_api_transaction_close(&tran);
 
   return   true;
