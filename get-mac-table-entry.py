@@ -1,4 +1,7 @@
-import   cps_utils import   cps
+# Python code block to get MAC table entry
+
+import   cps_utils 
+import   cps
 
 cps_utils.add_attr_type("base-mac/query/mac-address",   "mac")
 
