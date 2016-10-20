@@ -1,3 +1,5 @@
+# Python code block to remove multiple MAC table entries
+
 import   cps_utils
 
 vlan_list   =[1,2,3,4,5]
@@ -15,7 +17,10 @@ el[1]   =  str(count)
 
 tr_obj   =  ('rpc',   obj.get())
 transaction   =  cps_utils.CPSTransaction([tr_obj])
+
+# Commit the transaction
 ret   =  transaction.commit()
 
+# Check for failure
 if not   ret:
     raise   RuntimeError("Error   Flushing   entries   from   MAC   Table")
