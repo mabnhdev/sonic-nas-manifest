@@ -1,3 +1,5 @@
+# Python code block to register for events
+
 import   cps
 
 handle   =  cps.event_connect()
