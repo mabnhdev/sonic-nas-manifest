@@ -10,25 +10,22 @@
 bool   cps_get_mac(){
 
 
-  // Create   and initialize   the   Get   object
+  // Create and initialize the get object
   cps_api_get_params_t   gp; cps_api_get_request_init(&gp);
 
-  // Create   a new   object   and append it to   get   request's   filter   object   list
+  // Create a new object and append it to get request's filter object list
   cps_api_object_t   obj   =  cps_api_object_list_create_obj_and_append(gp.filters);
   if(obj   ==   NULL){
     cps_api_get_request_close(&gp);
     return   false;
   } 
 
-
-
-  // Create,   initialize   and set   the   key for   object
+  // Create, initialize and set the key for object
   cps_api_key_t   key;
   cps_api_key_from_attr_with_qual(&key,   BASE_MAC_QUERY_OBJ,   cps_api_qualifier_TARGET);
   cps_api_object_set_key(obj,&key);
 
-
-  //Perform   a get   request bool   rc=false;
+  // Perform a get request bool rc=false;
   if (cps_api_get(&gp)==cps_api_ret_code_OK)   {
     rc =  true;
     size_t   mx   =  cps_api_object_list_size(gp.list);
@@ -48,7 +45,7 @@ bool   cps_get_mac(){
     }
   }
 
-  // Close   the   get   the   request
+  // Close the get the request
   cps_api_get_request_close(&gp);
   return   rc;
 }
