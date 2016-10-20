@@ -1,4 +1,4 @@
-#Python code block to delete port to VLAN
+# Python code block to delete port to VLAN
 
 import cps
 import cps_object
