@@ -1,4 +1,4 @@
-# Python   code block   to   delete   a route
+# Python code block to delete a route
 
 import   cps_utils
 import   socket
@@ -25,8 +25,9 @@ print   obj.get()
 cps_update   =  ('delete',   obj.get())
 transaction   =  cps_utils.CPSTransaction([cps_update])
 
+# Commit the transaction
 ret   =  transaction.commit()
 
-
+# Check for failure
 if not   ret:
     raise   RuntimeError   ("Error   deleting   Route")
