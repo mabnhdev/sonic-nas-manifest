@@ -9,9 +9,8 @@ cps_api_return_code_t   event_publish(cps_api_object_t   event_obj)
 
 
   if (!init_flag)   {
-    /*   Not   initialized
-	 =>   Connect   to   CPS   event   subsystem
-    */
+    /* Not initialized
+	=>   Connect   to   CPS   event   subsystem */
     if (cps_api_event_service_init()   !=   cps_api_ret_code_OK)   {
       return   (cps_api_ret_code_ERR);
     }
@@ -23,16 +22,16 @@ cps_api_return_code_t   event_publish(cps_api_object_t   event_obj)
       return   (cps_api_ret_code_ERR);
     }
 
-    /*   Mark   as initialized   */
+    /* Mark as initialized */
     init_flag   =  true;
   }
 
   cps_api_return_code_t   result; 
 
-  /*   Publish   the   given   object   */
+  /* Publish the given object */
   result   =  cps_api_event_publish(handle,   event_obj);
 
-  /*   Consume   the   given   object   */
+  /* Consume the given object */
   cps_api_object_delete(event_obj);
 
   return   (result);
