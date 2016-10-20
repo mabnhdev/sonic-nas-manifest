@@ -62,8 +62,7 @@ cps_api_return_code_t xyz_write(
 
    if (request_obj == CPS_API_OBJECT_NULL) {
        /* Failed to extract request object
-          => Indicate error
-       */
+          => Indicate error */
        return (cps_api_ret_code_ERR);
    }
 
@@ -81,8 +80,7 @@ cps_api_return_code_t xyz_write(
        /* SET operation requested */
        /* Create the rollback object, i.e. an object to return
           containing the old values for any attributes set, and
-          add to transaction
-       */
+          add to transaction */
 
        cps_api_object_t rollback_obj;
        rollback_obj = cps_api_object_list_create_obj_and_append(
@@ -98,7 +96,7 @@ cps_api_return_code_t xyz_write(
        /* Assume SET successful */
        result = cps_api_ret_code_OK;
 
-       /* For each attribute given in the request,   */
+       /* For each attribute given in the request */
        cps_api_object_it_t attr_iter;
 
        cps_api_object_it_begin(request_obj, &attr_iter);
@@ -110,8 +108,7 @@ cps_api_return_code_t xyz_write(
            attr_id = cps_api_object_attr_id(attr_iter.attr);
 
            /* Update the rollback object with the old value
-              of the attribute
-           */
+              of the attribute */
 
            cps_api_object_attr_add_...(rollback_obj,
                                        attr_id,
@@ -125,28 +122,24 @@ cps_api_return_code_t xyz_write(
 
            if (attr == CPS_API_ATTR_NULL)) {
                /* Failed to extract attribute
-                  => Indicate error
-               */
+                  => Indicate error */
                result = cps_api_ret_code_ERR;
                continue;
            }
 
            /* Extract the value of the attribute in the request
-              object
-           */
+              object */
            value = cps_api_object_attr_data_....(attr);
 
            /* Validate the requested attribute value, its
               consistency with other attributes and/or existing
-              configuration, etc.
-           */
+              configuration, etc. */
 
        }
 
        /* If the whole request has been validated, do something with
-          the extracted values   program hardware,
-          take some action, etc.
-       */
+          the extracted values program hardware,
+          take some action, etc. */
        break;
 
    case cps_api_oper_CREATE:
@@ -172,7 +165,7 @@ cps_api_return_code_t xyz_write(
 
 /**********************************************************
 Template CPS API object server rollback handler function
-*******************************************************************/
+***********************************************************/
 cps_api_return_code_t xyz_rollback(
    void                         *context,
    cps_api_transaction_params_t *param,
@@ -188,14 +181,13 @@ cps_api_return_code_t xyz_rollback(
 
    if (rollback_obj == CPS_API_OBJECT_NULL) {
        /* Failed to extract rollback object
-          => Indicate failure
-       */
+          => Indicate failure */
 
        return (cps_api_ret_code_ERR);
 
    }
 
-   /* For each attribute to be rolled back,   */
+   /* For each attribute to be rolled back */
    cps_api_object_it_t attr_iter;
 
    cps_api_object_it_begin(rollback_obj, &attr_iter);
@@ -214,8 +206,7 @@ cps_api_return_code_t xyz_rollback(
        if (attr == CPS_API_ATTR_NULL)) {
 
            /* Failed to extract attribute
-              => Indicate error
-           */
+              => Indicate error */
 
            result = cps_api_ret_code_ERR;
            continue;
@@ -223,8 +214,7 @@ cps_api_return_code_t xyz_rollback(
        }
 
        /* Extract the value of the attribute in the rollback
-          object
-       */
+          object */
        value = cps_api_object_attr_data_....(attr);
 
        /* Apply attribute value */
@@ -234,12 +224,12 @@ cps_api_return_code_t xyz_rollback(
    return (result);
 }
 
-/******************************************************************
+/**********************************************************************
 Template mainline function for a CPS API object server
 This function registers with the CPS API service, and registers handler
 functions to be invoked by the CPS API service when CPS API requests
 are made for certain CPS API objects.
-*******************************************************************/
+***********************************************************************/
 
 cps_api_return_code_t init(void)
 {      /* Obtain a handle for the CPS API service */
@@ -251,8 +241,7 @@ cps_api_return_code_t init(void)
       ) {
 
        /* Failed to obtain handle for CPS API service
-          => Indicate an error
-       */
+          => Indicate an error */
        return (cps_api_ret_code_ERR);
    }
 
@@ -274,8 +263,7 @@ cps_api_return_code_t init(void)
    if (cps_api_register(&reg) != cps_api_ret_code_OK) {
 
        /* Failed to register handler function with CPS API service
-          => Indicate an error
-       */
+          => Indicate an error */
        return (cps_api_ret_code_ERR);
    }
 
