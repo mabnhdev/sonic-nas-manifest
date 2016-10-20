@@ -10,7 +10,7 @@ cps_api_return_code_t   event_publish(cps_api_object_t   event_obj)
 
   if (!init_flag)   {
     /* Not initialized
-	=>   Connect   to   CPS   event   subsystem */
+	=> Connect to CPS event subsystem */
     if (cps_api_event_service_init()   !=   cps_api_ret_code_OK)   {
       return   (cps_api_ret_code_ERR);
     }
