@@ -1,3 +1,5 @@
+# Python code block to publish events
+
 import   cps
 import   cps_utils
 
