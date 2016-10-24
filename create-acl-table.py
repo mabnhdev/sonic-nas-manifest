@@ -35,10 +35,12 @@ cps_update   =  ('create',   cps_obj.get())
 # Add the CPS object to a new CPS transaction
 cps_trans   =  cps_utils.CPSTransaction([cps_update])
 
-# Commit the CPS transaction r = cps_trans.commit()
+# Commit the CPS transaction 
+r = cps_trans.commit()
 if not   r:
     raise   RuntimeError   ("Error   creating   ACL  Table")
 
+# Retrieve CPS object ID
 ret   =  cps_utils.CPSObject   (module='base-acl/table',   obj=r[0]['change'])
 tbl_id   =  ret.get_attr_data   ('id')
 print   "Successfully   created   ACL  Table   " +  str(tbl_id)
@@ -65,13 +67,18 @@ cps_obj.add_embed_attr   (['match','1','IN_PORT_VALUE'],   nas_os_utils.if_namet
 cps_obj.add_embed_attr   (['action','0','type'],   e_atype['PACKET_ACTION'])
 cps_obj.add_embed_attr   (['action','0','PACKET_ACTION_VALUE'],   e_ptype['DROP'])
 
-# Associate the CPS object with a CPS operation cps_update = ('create',   cps_obj.get())
-# Add the CPS object to a new CPS transaction cps_trans = cps_utils.CPSTransaction([cps_update])
+# Associate the CPS object with a CPS operation 
+cps_update = ('create',   cps_obj.get())
 
-# Commit the CPS transaction r = cps_trans.commit()
+# Add the CPS object to a new CPS transaction 
+cps_trans = cps_utils.CPSTransaction([cps_update])
+
+# Commit the CPS transaction 
+r = cps_trans.commit()
 if not   r:
     raise   RuntimeError   ("Error   creating   MAC   ACL  Entry")
 
+# Retrieve CPS object ID
 ret   =  cps_utils.CPSObject   (module='base-acl/entry',   obj=r[0]['change'])
 mac_eid   =  ret.get_attr_data   ('id')
 print   "Successfully   created   MAC   ACL  Entry   " +  str(mac_eid)
