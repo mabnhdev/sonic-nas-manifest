@@ -1,3 +1,5 @@
+// C application example to create a MAC address table entry
+
 #include   "cps_api_object.h"
 #include   "dell-base-l2-mac.h"
 #include   "cps_class_map.h"
@@ -6,9 +8,7 @@
 #include   <stdint.h>
 #include   <net/if.h>
 
-
 bool   cps_create_mac(){
-
 
   // Create and initialize the transaction object
   cps_api_transaction_params_t   tran;
@@ -28,7 +28,7 @@ bool   cps_create_mac(){
     return   false;
   }
 
-  // Set the key for the obejct
+  // Set the key for the object
   cps_api_object_set_key(obj,&key);
 
   // Add attributes mandatory to create MAC address entry
