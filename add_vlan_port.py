@@ -21,7 +21,7 @@ cps_update = {'change':cps_obj.get(),'operation': 'set'}
 transaction = cps.transaction([cps_update])
 
 # Check for failure
+ret = transaction.commit()
 if not   transaction:
     raise   RuntimeError   ("Error   in   adding   port   to   Vlan")
-
 print "successful"
