@@ -29,9 +29,7 @@ print   obj.get()
 cps_update   =  ('create',   obj.get())
 transaction   =  cps_utils.CPSTransaction([cps_update])
 
-# Commit the transaction
-ret   =  transaction.commit()
-
 # Check for failure
+ret = transaction.commit()
 if not   ret:
     raise   RuntimeError   ("Error   creating   Route")
