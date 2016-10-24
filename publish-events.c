@@ -1,25 +1,23 @@
+// C application example to publish events
+
 #include   "cps_api_events.h"
 #include   "cps_api_object.h"
 #include   "dell-base-phy-interface.h"
 #include   "cps_class_map.h"
 #include   "cps_api_object_key.h"
 
-
 #include   <stdio.h>
 #include   <net/if.h>
 
-
-bool   cps_pub_intf_event()   {
-
+bool   cps_pub_intf_event() {
 
   static   cps_api_event_service_handle_t   handle;
-  if (cps_api_event_service_init()   !=   cps_api_ret_code_OK)   {
+  if (cps_api_event_service_init()   !=   cps_api_ret_code_OK) {
     return   false;
   }
-  if (cps_api_event_client_connect(&handle)   !=   cps_api_ret_code_OK)   {
+  if (cps_api_event_client_connect(&handle)   !=   cps_api_ret_code_OK) {
     return   false;
   }
-
 
   // Create and intialize the key
   cps_api_key_t   key;
@@ -28,8 +26,7 @@ bool   cps_pub_intf_event()   {
   // Create the object
   cps_api_object_t   obj   =  cps_api_object_create();
 
-
-  if(obj   ==   NULL){
+  if(obj   ==   NULL) {
     return   false;
   }
 
@@ -39,7 +36,7 @@ bool   cps_pub_intf_event()   {
   // Set the key to the object
   cps_api_object_set_key(obj,&key);
 
-  //Publish the object
+  // Publish the object
   if(cps_api_event_publish(handle,obj)!=   cps_api_ret_code_OK){
     cps_api_object_delete(obj);
     return   false;
@@ -48,5 +45,4 @@ bool   cps_pub_intf_event()   {
   // Delete the object
   cps_api_object_delete(obj);
   return   true;
-
 } 
