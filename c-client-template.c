@@ -1,8 +1,10 @@
 /********************************************** 
 Template to perform a CPS API GET  request.
 ***********************************************/
+
 cps_api_return_code_t   do_get_request()
 {
+
   /* Allocate and initialize the get request structure */
   cps_api_get_params_t   get_req;
 
@@ -126,6 +128,5 @@ cps_api_return_code_t   do_set_request()
   } while   (0);
 
   cps_api_transaction_close(&xact);
-
   return   (result);
 }
