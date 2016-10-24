@@ -16,9 +16,7 @@ cps_obj=cps_utils.CPSObject('base-ip/ipv4/address',data=ip_attributes)
 cps_update   =  ('create',   cps_obj.get())
 transaction   =  cps_utils.CPSTransaction([cps_update])
 
-# Commit the transaction
-ret   =  transaction.commit()
-
 # Check for failure
+ret = transaction.commit()
 if not   ret:
     raise   RuntimeError   ("Error   ")
