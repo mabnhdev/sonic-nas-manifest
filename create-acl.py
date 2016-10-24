@@ -13,7 +13,7 @@ e_ftype   =  {'SRC_MAC':   3,   'DST_MAC':   4,   'SRC_IP':   5,   'DST_IP':   6
 e_atype   =  {'PACKET_ACTION':   3,   'SET_TC':   10}
 e_ptype   =  {'DROP':   1}
 
-# Tell CPS utility about the type of each attribute
+# Teach CPS utility about the type of each attribute
 type_map   =  {
   'base-acl/entry/SRC_MAC_VALUE/addr':   'mac',
   'base-acl/entry/SRC_MAC_VALUE/mask':   'mac',
@@ -21,8 +21,7 @@ type_map   =  {
 for   key,val   in   type_map.items():
     cps_utils.cps_attr_types_map.add_type(key,   val)
 
-    
-# Create ACL Table
+# Create ACL table
 # Create CPS object and fill leaf attributes
 cps_obj   =  cps_utils.CPSObject(module='base-acl/table')
 cps_obj.add_attr   ('stage',   e_stg['INGRESS'])
@@ -31,13 +30,18 @@ cps_obj.add_attr   ('priority',   99)
 # Populate the leaf-list attribute
 cps_obj.add_list   ('allowed-match-fields',   [e_ftype['SRC_MAC'], e_ftype['DST_IP'], e_ftype['DSCP'], e_ftype['IN_PORT']])
 
-# Associate the CPS object with a CPS operation cps_update = ('create', cps_obj.get())
-# Add the CPS object to a new CPS transaction cps_trans = cps_utils.CPSTransaction([cps_update])
+# Associate the CPS object with a CPS operation 
+cps_update = ('create', cps_obj.get())
 
-# Commit the CPS transaction r = cps_trans.commit()
+# Add the CPS object to a new CPS transaction 
+cps_trans = cps_utils.CPSTransaction([cps_update])
+
+# Commit the CPS transaction 
+ret = cps_trans.commit()
 if not   r:
     raise   RuntimeError   ("Error   creating   ACL  Table")
 
+# Retrieve CPS object ID
 ret   =  cps_utils.CPSObject   (module='base-acl/table',   obj=r[0]['change'])
 tbl_id   =  ret.get_attr_data   ('id')
 print   "Successfully   created   ACL  Table   " +  str(tbl_id) 
