@@ -1,11 +1,11 @@
+// C application example to request MAC address table entry
+
 #include   "cps_api_object.h"
 #include   "dell-base-l2-mac.h"
 #include   "cps_class_map.h"
 #include   "cps_api_object_key.h"
 
-
 #include   <stdio.h>
-
 
 bool   cps_get_mac(){
 
@@ -25,7 +25,8 @@ bool   cps_get_mac(){
   cps_api_key_from_attr_with_qual(&key,   BASE_MAC_QUERY_OBJ,   cps_api_qualifier_TARGET);
   cps_api_object_set_key(obj,&key);
 
-  // Perform a get request bool rc=false;
+  // Perform a get request 
+  bool rc=false;
   if (cps_api_get(&gp)==cps_api_ret_code_OK)   {
     rc =  true;
     size_t   mx   =  cps_api_object_list_size(gp.list);
