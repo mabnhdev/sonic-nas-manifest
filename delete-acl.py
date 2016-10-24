@@ -11,9 +11,7 @@ cps_update   =  ('delete',   cps_obj.get())
 # Add the CPS object to a new CPS transaction
 cps_trans   =  cps_utils.CPSTransaction([cps_update])
 
-# Commit the CPS transaction
-r =  cps_trans.commit()
-
-# Check for failure
+# Verify the return value
+r =  cps_trans.commit()
 if not   r:
     raise   RuntimeError   ("Error   deleting   ACL  Entry")
