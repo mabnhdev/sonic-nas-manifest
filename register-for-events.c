@@ -1,17 +1,17 @@
+// C application example to register for events
+
 #include   "cps_api_events.h"
 #include   "cps_api_object.h"
 #include   "dell-base-phy-interface.h"
 #include   "cps_class_map.h"
 #include   "cps_api_object_key.h"
 
-
 #include   <stdlib.h> 
 #include   <stdio.h>
 #include   <unistd.h>
 
-
 // Callback for the interface event handling
-static   bool   cps_if_event_cb(cps_api_object_t   obj,   void   *param){
+static   bool   cps_if_event_cb(cps_api_object_t   obj,   void   *param) {
 
   char   buf[1024];
   cps_api_object_to_string(obj,buf,sizeof(buf));
@@ -23,11 +23,11 @@ bool   cps_reg_intf_events(){
 
 
   // Initialize the event service
-  if (cps_api_event_service_init()   !=   cps_api_ret_code_OK)   {
+  if (cps_api_event_service_init()   !=   cps_api_ret_code_OK) {
     return   false;
   }
   // Initialize the event handling thread
-  if (cps_api_event_thread_init()   !=   cps_api_ret_code_OK)   {
+  if (cps_api_event_thread_init()   !=   cps_api_ret_code_OK) {
     return   false;
   }
 
@@ -44,7 +44,7 @@ bool   cps_reg_intf_events(){
 
 
   // Register to receive events for key created above
-  if (cps_api_event_thread_reg(&reg,   cps_if_event_cb,NULL)!=cps_api_ret_code_OK)   {
+  if (cps_api_event_thread_reg(&reg,   cps_if_event_cb,NULL)!=cps_api_ret_code_OK) {
     return   false;
   }
 
@@ -52,7 +52,5 @@ bool   cps_reg_intf_events(){
   while(1){
     sleep(1);
   }
-
   return   true;
-
 } 
