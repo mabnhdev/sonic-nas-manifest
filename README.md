@@ -13,8 +13,15 @@ There are two ways to get the SONiC NAS:
 - Download and install the binaries - see the [installation](#Installation) instructions for details.
 - Build from scratch - see the step-by-step instructions below to build the project.
  
+Build environment recommendations
+---------------------------------
+- Intel multi-core
+- Ubuntu 16.04 or later (desktop edition with Python installed)
+- 20G available free disk space
+- Bash (most shell commands in the documentation or this page refer to bash commands - we like csh as well)
+
 The build environment
---------------------------------
+----------------------
 Prerequisites:
 
 Updated environment: sudo apt-get update
@@ -43,12 +50,6 @@ Updated environment: sudo apt-get update
 ```
 - You may have to log out/in to activate the changes to groups   
 - Ensure you have proper permissions to clone source file (SSH keys must be installed)
-
-Build environment recommendations:
-- Intel multi-core system 
-- Ubuntu 16.04 or later (desktop edition with Python installed)
-- 20G of free disk space 
-- Bash (most shell commands in the documentation or this page refer to bash commands - we like csh as well)
 
 > NOTE: You will need to setup your ssh keys with Github [Settings->keys](https://github.com/settings/keys) as we are using git over ssh. 
 
