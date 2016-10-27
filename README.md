@@ -19,7 +19,7 @@ Build environment recommendations
 - Intel multi-core
 - Ubuntu 16.04 or later (desktop edition with Python installed)
 - 20G available free disk space
-- Bash (most shell commands in the documentation or this page refer to bash commands - we like csh as well)
+- bash (most shell commands refer to bash commands - we like csh as well)
 
 The build environment
 ----------------------
