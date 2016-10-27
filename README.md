@@ -3,11 +3,11 @@ Welcome to the SONiC NAS Host-Adapter
 ======================================
 This SONiC repo contains the manifest file for the repo tool used to pull down sources for the SONiC Network Adaptation Service (NAS) project. The SONiC NAS project is the Switch Abstraction Interface (SAI) Host-Adapter originally written by Dell, and contributed to the SONiC project. It is assumed that you are familiar with Linux and have basic development knowledge.
 
-Reading the documentation
+Read the documentation
 -------------------------
 See [SONiC NAS Documentation](https://github.com/Azure/sonic-nas-manifest/wiki) for complete information.
 
-Getting SONiC NAS
+Get SONiC NAS
 -----------------
 There are two ways to get the SONiC NAS:
 
@@ -66,7 +66,7 @@ The `repo sync` command downloads all of the source files that you need to build
 
 All the build scripts are found in the [SONiC Build Tools repo](https://github.com/Azure/sonic-build-tools) and will be downloaded as part of the above `repo sync`.
 
-Building the code
+Build the code
 -----------------
 Setup your path to include the *sonic-build-tools/scripts* folder (if you plan to run this command often, you could optionally add it to the .bashrc):
 ```
@@ -90,11 +90,11 @@ cd sonic-logging
 sonic_build -- clean binary
 ```
 
-Building one repository
+Build one repository
 -----------------------
 See the corresponding README.md file associated with the repo for the specific build commands, along with package dependencies.
 
-Building all repositories
+Build all repositories
 ---------------------------
 Issue the `sonic_build_all` command from the root directory to build all repos and create packages in the same root directory.
 ```
