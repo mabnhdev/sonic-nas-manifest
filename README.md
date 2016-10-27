@@ -52,7 +52,7 @@ Updated environment: `sudo apt-get update`
 - You may have to log out/in to activate the changes to groups   
 - Ensure you have proper permissions to clone source file (ssh keys must be installed)
 
-> NOTE: You will need to setup your ssh keys with Github [Settings->keys](https://github.com/settings/keys) as we are using git over ssh. 
+> NOTE: You will need to setup your ssh keys with Github [Settings->keys](https://github.com/settings/keys) - we are using git over ssh. 
 
 Clone the source code
 ---------------------
