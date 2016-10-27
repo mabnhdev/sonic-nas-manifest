@@ -23,7 +23,7 @@ Build environment recommendations
 
 The build environment
 ----------------------
-Prerequisites:
+### Prerequisites
 
 Updated environment: `sudo apt-get update`
 - GIT: `sudo apt-get install git`
