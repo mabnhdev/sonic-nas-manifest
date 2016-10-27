@@ -11,8 +11,8 @@ Getting SONiC NAS
 -----------------
 There are two ways to get the SONiC NAS:
 
-- Download and install the binaries - see [installation](#Installation) for complete information, *OR*
-- Build from scratch - see the step-by-step instructions below to build the project.
+- **Download and install binaries** - see [installation](#Installation) for complete information, **or**
+- **Build from scratch** - see the step-by-step instructions below to build the project.
  
 Build environment recommendations
 ---------------------------------
