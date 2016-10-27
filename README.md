@@ -1,7 +1,7 @@
 
 Welcome to the SONiC NAS Host-Adapter
 ======================================
-This SONiC repo contains the manifest file for the repo tool used to pull down sources for the SONiC Network Adaptation Service (NAS) project. The SONiC NAS project is the Switch Abstraction Interface (SAI) Host-Adapter originally written by Dell, and contributed to the SONiC project. It is assumed that you are familiar with Linux and have basic development knowledge.
+This SONiC repo contains the manifest file for the repo tool used to pull down sources for the SONiC network adaptation service (NAS) project. The SONiC NAS project is the switch abstraction interface (SAI) Host-Adapter originally written by Dell, and contributed to the SONiC project. It is assumed that you are familiar with Linux and have basic development knowledge.
 
 Read the documentation
 -------------------------
@@ -52,7 +52,7 @@ Updated environment: `sudo apt-get update`
 - You may have to log out/in to activate the changes to groups   
 - Ensure you have proper permissions to clone source file (ssh keys must be installed)
 
-> NOTE: You will need to setup your ssh keys with Github [Settings->keys](https://github.com/settings/keys) - we are using git over ssh. 
+> **NOTE**: Setup your ssh keys with Github [Settings->keys](https://github.com/settings/keys) - we are using git over ssh. 
 
 Clone the source code
 ---------------------
@@ -106,3 +106,5 @@ Installation
 Once all of the repos have been built, you can install the created ONIE Debian x86_64 image. You can then install all of the build packages, along with the other Debian files you downloaded earlier in the root directory.
 
 See [SONiC NAS documentation](https://github.com/Azure/sonic-nas-manifest/wiki/Install-SONiC-Host-Adapter-on-Dell-S6000-Platform) for complete installation information.
+
+(c) Dell 2016
