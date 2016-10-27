@@ -1,7 +1,7 @@
 
 Welcome to the SONiC NAS Host-Adapter
 ======================================
-This SONiC repo contains the manifest file for the repo tool used to pull down sources for the SONiC NAS project. The SONiC NAS project is the SAI Host-Adapter originally written by Dell and contributed to the SONiC project. It is assumed that you are familiar with Linux and have basic development knowledge.   
+This SONiC repo contains the manifest file for the repo tool used to pull down sources for the SONiC Network Adaptation Service (NAS) project. The SONiC NAS project is the Switch Abstraction Interface (SAI) Host-Adapter originally written by Dell, and contributed to the SONiC project. It is assumed that you are familiar with Linux and have basic development knowledge.
 
 Reading the documentation
 -------------------------
@@ -50,7 +50,7 @@ Updated environment: `sudo apt-get update`
     sudo service docker restart
 ```
 - You may have to log out/in to activate the changes to groups   
-- Ensure you have proper permissions to clone source file (SSH keys must be installed)
+- Ensure you have proper permissions to clone source file (ssh keys must be installed)
 
 > NOTE: You will need to setup your ssh keys with Github [Settings->keys](https://github.com/settings/keys) as we are using git over ssh. 
 
