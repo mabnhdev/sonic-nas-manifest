@@ -3,16 +3,17 @@
   <remote name="sonic" fetch="ssh://git@github.com/Azure" revision="master" />
   <remote name="sonic-sai" fetch="ssh://git@github.com/Dell-Networking" revision="master" />
   <remote name="sonic-extreme" fetch="ssh://git@giteng1" revision="master" />
+  <remote name="sonic-mabnhdev" fetch="ssh://git@github.com/mabnhdev" revision="master" />
   <default remote="sonic" sync-j="4"/>
   
   <!-- The following section is for build tools and scripts-->
   <project path="sonic-dell-buildimage" name="sonic-dell-buildimage" remote="sonic-sai" groups="notdefault" />
-  <project path="sonic-build-tools" name="sonic-build-tools"/>
+  <project path="sonic-build-tools" name="sonic-build-tools" remote="sonic-mabnhdev"/>
 
   <!-- The following section is for platform configuration files-->
   <project path="sonic-pas-config-s6000" name="sonic-pas-config-s6000"/>
-  <project path="sonic-pas-config-l9032nxb" name="sonic-pas-config-l9032nxb" remote="sonic-extreme"/>
-  <project path="sonic-pas-config-et-v648xf" name="sonic-pas-config-et-v648xf" remote="sonic-extreme"/>
+  <project path="sonic-pas-config-l9032nxb" name="sonic-pas-config-l9032nxb" remote="sonic-extreme" />
+  <project path="sonic-pas-config-et-v648xf" name="sonic-pas-config-et-v648xf" remote="sonic-extreme" />
   <project path="sonic-nas-platform-s6000" name="sonic-nas-platform-s6000"/>
   
   <!-- The following section contains the kernel configuration options that you need to have enabled for the device driver support-->
@@ -22,7 +23,7 @@
   <!-- The following section is for infrastructure and libraries-->
   <project path="sonic-logging" name="sonic-logging" />
   <project path="sonic-common-utils" name="sonic-common-utils" />
-  <project path="sonic-object-library" name="sonic-object-library" />
+  <project path="sonic-object-library" name="sonic-object-library"  remote="sonic-mabnhdev" />
 
   <!-- The following section is for API model definitions -->
   <project path="sonic-base-model" name="sonic-object-model-schema"/>
