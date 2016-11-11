@@ -2,6 +2,7 @@
 <manifest>
   <remote name="sonic" fetch="ssh://git@github.com/Azure" revision="master" />
   <remote name="sonic-sai" fetch="ssh://git@github.com/Dell-Networking" revision="master" />
+  <remote name="sonic-extreme" fetch="ssh://git@giteng1" revision="master" />
   <default remote="sonic" sync-j="4"/>
   
   <!-- The following section is for build tools and scripts-->
@@ -10,6 +11,8 @@
 
   <!-- The following section is for platform configuration files-->
   <project path="sonic-pas-config-s6000" name="sonic-pas-config-s6000"/>
+  <project path="sonic-pas-config-l9032nxb" name="sonic-pas-config-l9032nxb" remote="sonic-extreme"/>
+  <project path="sonic-pas-config-et-v648xf" name="sonic-pas-config-et-v648xf" remote="sonic-extreme"/>
   <project path="sonic-nas-platform-s6000" name="sonic-nas-platform-s6000"/>
   
   <!-- The following section contains the kernel configuration options that you need to have enabled for the device driver support-->
