@@ -56,7 +56,7 @@
   <project path="sonic-nas-platform-vm" name="sonic-nas-platform-vm" remote="sonic-sai" groups="default"/>
   <project path="sonic-platform-vm-s6000-config" name="sonic-platform-vm-s6000-config" remote="sonic-sai" groups="default"/>
   <project path="sonic-sim-object-model-db" name="sonic-sim-object-model-db" />
-  <project path="sonic-sai-vm" name="sonic-sai-vm" remote="sonic-sai" groups="default"/>
+  <project path="sonic-sai-vm" name="sonic-sai-vm" remote="sonic-mabnhdev" groups="default"/>
   <project path="sonic-sai-common-utils" name="sonic-sai-common-utils" remote="sonic-sai" groups="default"/>
   <project path="sonic-sdi-sys-vm" name="sonic-sdi-sys-vm" remote="sonic" groups="default"/>
   <project path="sonic-sai-common" name="sonic-sai-common" remote="sonic-sai" groups="default"/>
