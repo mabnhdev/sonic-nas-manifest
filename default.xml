@@ -45,7 +45,7 @@
   <!-- The following section is for platform service configuration -->
   <project path="sonic-pas" name="sonic-pas" />
   <project path="sonic-sdi-api" name="sonic-sdi-api" />
-  <project path="sonic-sdi-device-drivers" name="sonic-sdi-device-drivers" />
+  <project path="sonic-sdi-device-drivers" name="sonic-sdi-device-drivers" remote="sonic-mabnhdev" />
   <project path="sonic-sdi-sys" name="sonic-sdi-sys" />
   <project path="sonic-sdi-framework" name="sonic-sdi-framework" />
   
