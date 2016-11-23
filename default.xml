@@ -14,6 +14,7 @@
   <project path="sonic-pas-config-s6000" name="sonic-pas-config-s6000"/>
   <project path="sonic-pas-config-l9032nxb" name="sonic-pas-config-l9032nxb" remote="sonic-extreme" />
   <project path="sonic-pas-config-et-v648xf" name="sonic-pas-config-et-v648xf" remote="sonic-extreme" />
+  <project path="sonic-pas-config-extreme-x870" name="sonic-pas-config-extreme-x870" remote="sonic-extreme" />
   <project path="sonic-nas-platform-s6000" name="sonic-nas-platform-s6000"/>
   
   <!-- The following section contains the kernel configuration options that you need to have enabled for the device driver support-->
